@@ -1,0 +1,39 @@
+# prime factor of >>600851475143
+# what is the algorithm.... make primes then get sqrt... then
+# gcf of two things. if match. divide otherwise...
+import math
+def gcf(a, b):
+    # large mod small,, if 0 divisible return
+    out = 2
+    small = 0
+    big = 0
+    if a > b:# two groups
+        big = a
+        small = b
+    else:
+        big = b
+        small = a
+    out = big % small
+    while out != 1 and out!=0:
+        big = small
+        small = out# shift modding
+        out = big % small
+
+    # end part
+    if out==0:
+        return small
+    else:
+        return 1
+def prime_factor(a):
+    max_divisor = math.sqrt(a) // 1# succeeds at floor
+    possible_divisor = 0
+    largest_divisor = 0
+    for i in range(max_divisor,1,-1):
+        possible_divisor = gcf(a,i)
+        if possible_divisor > largest_divisor:
+            largest_divisor = possible_divisor
+        if possible_divisor != 1:
+            a /= possible_divisor# decreases value so that it can be checked faster
+    return largest_divisor
+# why does this work
+print prime_factor(600851475143)
