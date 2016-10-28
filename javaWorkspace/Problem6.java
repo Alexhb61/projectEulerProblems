@@ -49,7 +49,7 @@ public class Problem6{
                 }
                 //I FOGOT TO SHIFT I Over afterwards
                 i=j-1;//don't need the extra shift...
-                System.out.println("testingSize:" + runningProduct + " i= " +i);
+                System.out.println("testingSize after Buildup:" + runningProduct + " i= " +i);
            }
        }
        return largestProduct;          
