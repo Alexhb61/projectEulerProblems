@@ -1,0 +1,16 @@
+#ok a<b<c & a+b+c =1000 a^2 +b^2 =c^2 two for loops
+#for loop of
+def sum_of_triple(a_sum):
+    found_it = False
+    for a in range(1, a_sum):
+        for b in range(a, a_sum):
+            if a**2 +b**2 == (a_sum-a-b)**2:
+                print a
+                print b
+                found_it = True
+                break
+        if found_it:
+            break
+    print a*b*(a_sum-a-b)
+sum_of_triple(12)
+sum_of_triple(1000)
